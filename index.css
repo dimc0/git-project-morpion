@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 4rem;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 40px;
+    font-size: 2rem;
+    border: none;
+    background-color: #FF4500;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.play-button:hover {
+    background-color: #FF6347;
+}
+
+.ocean {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40vh;
+    background: linear-gradient(to bottom, #1E90FF, #00BFFF);
+    overflow: hidden;
+}
+
+.bateau {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('./bateau.png') no-repeat center;
+    background-size: contain;
+    animation: bateau-animation 6s linear infinite alternate;
+}
+
+@keyframes bateau-animation {
+    0% { left: 5%; }
+    100% { left: 85%; }
+}
+
+.beach {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15vh;
+    background: sandybrown;
+}
+
+.crab {
+    position: absolute;
+    bottom: 5vh;
+    width: 50px;
+    height: 50px;
+    background: url('./crabe.png') no-repeat center;
+    background-size: contain;
+    animation: crab-walk 4s infinite alternate ease-in-out;
+}
+
+@keyframes crab-walk {
+    0% { left: 5%; }
+    100% { left: 85%; }
+}
