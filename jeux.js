@@ -9,16 +9,23 @@ const winningCombinations = [
 ];
 
 
+const playerImages = {
+    'X': '/image/croix.png', 
+    'O': '/image/cercle.png',    
+};
+
 function checkWinner() {
     for (let combination of winningCombinations) {
         const [a, b, c] = combination;
         if (
-            cells[a].textContent !== '' &&
-            cells[a].textContent === cells[b].textContent &&
-            cells[a].textContent === cells[c].textContent
+            cells[a].innerHTML !== '' &&
+            cells[a].innerHTML === cells[b].innerHTML &&
+            cells[a].innerHTML === cells[c].innerHTML
         ) {
             gameActive = false;
-            setTimeout(() => alert(`Le joueur ${cells[a].textContent} a gagné !`), 100);
+            cells[a].classList.add("win");
+            cells[b].classList.add("win");
+            cells[c].classList.add("win");
             return true;
         }
     }
@@ -26,14 +33,20 @@ function checkWinner() {
 }
 
 function isDraw() {
-    return [...cells].every(cell => cell.textContent !== '');
+    return [...cells].every(cell => cell.innerHTML !== '');
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     cells.forEach(cell => {
         cell.addEventListener('click', () => {
-            if (gameActive && cell.textContent === '') {
-                cell.textContent = currentPlayer; 
+            if (gameActive && cell.innerHTML === '') {
+                const img = document.createElement('img');
+                img.src = playerImages[currentPlayer];
+                img.alt = currentPlayer;
+                img.style.width = "100%";  
+                img.style.height = "100%";
+
+                cell.appendChild(img);
 
                 if (checkWinner()) {
                     return; 

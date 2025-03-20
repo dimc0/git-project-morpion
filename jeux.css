@@ -1,10 +1,16 @@
+:root{
+    background-color: antiquewhite;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    background-color: var(background-color);
 }
+
+
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 100px);
@@ -14,11 +20,25 @@ body {
 .cell {
     width: 100px;
     height: 100px;
-    background-color: white;
     border: 2px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2em;
     cursor: pointer;
+    transition: ease 1s ;
+}
+
+.cell:active {
+    transition: ease-in 5s
+}
+
+@keyframes winner-animation {
+    0% { background-color: white; }
+    50% { background-color: lightgreen; }
+    100% { background-color: white; }
+}
+
+.win {
+    animation: winner-animation 1s infinite;
 }
