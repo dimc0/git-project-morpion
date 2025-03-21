@@ -3,7 +3,6 @@ body {
     overflow: hidden;
     font-family: 'Pacifico', cursive;
     background: linear-gradient(to bottom, #87CEEB, #1E90FF);
-    height: 100vh;
 }
 
 .container {
@@ -84,4 +83,16 @@ h1 {
 @keyframes crab-walk {
     0% { left: 5%; }
     100% { left: 85%; }
+}
+
+
+#toggleSound {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background: url('./sound-icon.png') no-repeat center;
+    background-size: contain;
+    cursor: pointer;
 }
