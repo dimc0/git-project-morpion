@@ -76,7 +76,7 @@ h1 {
     width: 50px;
     height: 50px;
     background: url('./crabe.png') no-repeat center;
-    background-size: contain;
+    background-size: contain; 
     animation: crab-walk 4s infinite alternate ease-in-out;
 }
 
