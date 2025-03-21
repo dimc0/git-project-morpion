@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (isDraw()) {
                     gameActive = false;
-                    setTimeout(() => alert("Match nul !"), 100);
                     return;
                 }
 
