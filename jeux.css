@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: var(--background-color);
+    background-size: cover;
     margin: 0;
 }
 
@@ -16,8 +16,8 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
     gap: 5px;
 }
 
@@ -62,10 +62,11 @@ button {
     color: black;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 5s, transform 0.2s;
 }
 
 button:hover {
+    transition: ease-in 1s;
     background-color: #e76f51;
     transform: scale(1.1);
 }
